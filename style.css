@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* colors */
+    /* Gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Text */
+    --desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --very-dark-blue: hsl(237, 12%, 33%);
+    --dark-blue: hsl(240, 6%, 50%);
+    --light: hsl(240, 5%, 91%);
+
+    /* Font */
+    --font-f: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+    font-family: var(--font-f);
+}
+
+.container {
+    display: flex;
+    background: var(--light);
+    width: 65rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 50px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
+    height: 30rem;
+    align-items: center;
+}
+
+.left {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.right {
+    width: 50%;
+    padding-right: 5rem;
+}
+
+.img-bx {
+    position: relative;
+    width: 90%;
+    left: -65px;
+    top: 50px;
+}
+
+.img-bx img {
+    position: absolute;
+    width: 100%;
+}
+
+img.box {
+    position: absolute;
+    width: 150px;
+    left: -74px;
+    top: 210px;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.accordian {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.ques {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--very-dark-blue);
+    cursor: pointer;
+    transition: color 400ms ease;
+}
+
+.active .ques {
+    font-weight: 700;
+}
+
+.active .ques:hover {
+    color: var(--very-dark-blue);
+}
+
+.ques:hover {
+    color: var(--soft-red);
+}
+
+.ans {
+    display: none;
+    font-size: 12px;
+    color: var(--dark-blue);
+    margin-top: 1rem;
+}
+
+.active .ans {
+    display: block;
+}
+
+#downIcon {
+    transform: rotate(0);
+}
+
+.active #downIcon {
+    transform: rotate(180deg);
+}
+/* Responsive */
+@media screen and (max-width: 1051px) {
+    .container {
+        flex-direction: column;
+        width: 350px;
+        padding: 2rem;
+        height: 37rem;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .right {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .left {
+        overflow: initial;
+        width: 90%;
+    }
+
+    .img-bx {
+        left: 0;
+        top: -135px;
+    }
+
+    .img-bx img:nth-child(1) {
+        top: 120px;
+    }
+}
